@@ -5,6 +5,7 @@ import GuestLayout from './components/GuestLayout.jsx'
 
 import Login from "./views/guest/Login.jsx"
 import Signup from "./views/guest/Signup.jsx"
+import HelloPage from './views/guest/HelloPage.jsx'
 
 import Settings from './views/default/Settings.jsx'
 
@@ -32,15 +33,20 @@ const router = createBrowserRouter([
     {
         path: '/',
         element: <GuestLayout />,
-
-    },
-    {
-        path: '/login',
-        element: <Login />
-    },
-    {
-        path: '/signup',
-        element: <Signup />
+        children: [
+            {
+                path: '/',
+                element: <HelloPage />
+            },
+            {
+                path: '/login',
+                element: <Login />
+            },
+            {
+                path: '/signup',
+                element: <Signup />
+            }
+        ]
     },
     {
         path: "*",
