@@ -1,0 +1,21 @@
+.icon {
+    font-size: 2rem;
+    text-align: center;
+    align-content: center;
+    color: var(--base-color-monochrome-third);
+}
+
+a.link{
+    display: block;
+    width: 2rem;
+    height: 2rem;
+    text-align: center;
+    align-content: center;
+    margin: auto;
+    text-decoration: none;
+    color: inherit;
+}
+
+a.link:hover>.icon{
+    color: var(--base-color-monochrome-forth);
+}

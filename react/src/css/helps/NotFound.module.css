@@ -1,0 +1,86 @@
+.content{
+    display:flex;
+    flex-direction: column;
+    width:100%;
+    min-height: 100vh;
+}
+
+main {
+    box-sizing: border-box;
+    align-content: center;
+    width: 100%;
+    flex: 1;
+}
+
+.text-center {
+    width: 100%;
+    text-align: center;
+}
+
+.primary-text {
+    font-size: 11.642rem;
+}
+
+.secondary-text {
+    font-size: var(--base-size-h2);
+    color: var(--base-color-monochrome-third);
+    margin: .25em 0;
+    font-weight: normal;
+    text-shadow:
+        1px 1px 5px var(--base-color-monochrome-forth);
+}
+
+.button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 1.25rem;
+}
+
+.button>a {
+    display: block;
+    padding: auto var(--base-size-desktop-p);
+    border-radius: 100px;
+    width: clamp(42px, 50%, 144px);
+    height: clamp(42px, 50vh, 48px);
+    font-size: var(--base-size-h5);
+    margin: var(--base-size-small);
+    text-align: center;
+    text-decoration: none;
+    align-content: center;
+    color: var(--base-color-monochrome-forth);
+    background-color: var(--base-color-monochrome-first);
+}
+
+.button>a:hover {
+    background-color: var(--base-color-monochrome-forth);
+    color: var(--base-color-monochrome-first);
+}
+
+
+.gradient-text {
+    font-weight: bold;
+    background: linear-gradient(90deg, var(--base-color-monochrome-first), var(--base-color-monochrome-second),
+            var(--base-color-monochrome-third), var(--base-color-monochrome-forth));
+    background-size: 200% 200%;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient-shine 5s linear infinite;
+}
+
+@keyframes gradient-shine {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+
+@media only screen and (max-width: 768px) {
+    .primary-text {
+        font-size: 7.45rem;
+    }
+}
