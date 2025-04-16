@@ -1,18 +1,13 @@
-import { Navigate} from "react-router-dom";
+import { Outlet } from "react-router-dom";
 
-import { useStateContext } from "../contexts/ContextProvider";
-import Footer from "../views/baseLayouts/Footer";
+import { Footer } from "../views";
+import styles from "./../css/layouts/Guest-Default.module.css"
 
-export default function GuestLayout(){
-    const {token}=useStateContext()
-    if(token){
-        return <Navigate to="/" />
-    }
-
-    return(
-        <div>
-           {/* <Outlet /> */}
-           <Footer />
+export default function GuestLayout() {
+    return (
+        <div className={styles["guest"]}>
+            <Outlet />
+            <Footer />
         </div>
     )
 }
