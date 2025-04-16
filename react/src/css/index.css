@@ -1,0 +1,69 @@
+:root{
+    /* Colors */
+    --base-color: #E1CFE6;
+
+    --base-color-analog-first:#DACFE6;
+    --base-color-analog-second:#E6CFDF;
+    --base-color-analog-third:#D2CFE6;
+    --base-color-analog-forth:#E6CFD2;
+
+    --base-color-monochrome-first:#B289BB;
+    --base-color-monochrome-second: #855291;
+    --base-color-monochrome-third:#5B2966;
+    --base-color-monochrome-forth:#330E3C;
+
+    --base-color-triad-first:#CFE6DE;
+    --base-color-triad-second: #E6DFCF;
+    --base-color-triad-third:#296651;
+
+    --base-color-complementary-first:#DCE6CF;
+    --base-color-complementary-second:#9B6CA6;
+    --base-color-complementary-third:#769152;
+
+    --base-color-split-complementary-first:#D2E6CF;
+    --base-color-split-complementary-second:#E6E5CF;
+    --base-color-split-complementary-third:#336629;
+
+    --base-color-square-first:#CFE1E6;
+    --base-color-square-second:230, 218, 207;
+    --base-color-square-third:#295966;
+
+    /* Sizes */
+    --base-size-desktop-p: 16px;
+    --base-size-mobile-p: 14px;
+    --base-size-small:0.8rem;
+    --base-size-h6: 1.25rem;
+    --base-size-h5: 1.563rem;
+    --base-size-h4: 1.953rem;
+    --base-size-h3: 2.441rem;
+    --base-size-h2: 3.052rem;
+    --base-size-h1: 3.815rem;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: var(--base-color);
+    min-height: 100vh;
+}
+
+#root{
+    width:100%;
+    min-height: 100vh;
+}
+
+html{
+    font-family: "Inter", sans-serif;
+    font-size: var(--base-size-desktop-p);
+}
+
+@media only screen and (max-width: 768px) {
+    html{
+        font-size: var(--base-size-mobile-p)
+    }
+}

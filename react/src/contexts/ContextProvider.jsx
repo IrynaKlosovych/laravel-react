@@ -1,11 +1,8 @@
-import { createContext, useContext, useState } from "react";
+import{ useState } from "react";
+import PropTypes from 'prop-types';
 
-const StateContext = createContext({
-    user: null,
-    token: null,
-    setUser: ()=>{},
-    setToken: ()=>{}
-})
+import {StateContext} from "./StateContext"
+
 
 export const ContextProvider = ({ children }) => {
     const [user, setUser] = useState({});
@@ -33,5 +30,6 @@ export const ContextProvider = ({ children }) => {
     )
 }
 
-
-export const useStateContext = () => useContext(StateContext)
+ContextProvider.propTypes = {
+    children: PropTypes.node.isRequired
+};
