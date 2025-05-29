@@ -8,7 +8,8 @@ main {
 }
 
 .signup-div,
-.login-div {
+.login-div,
+.update {
     width: 70%;
 }
 
@@ -59,40 +60,47 @@ form>div>button:hover {
     cursor: pointer;
 }
 
-form+div, .errors {
+form+div,
+.errors {
     margin: calc(var(--base-size-desktop-p)/2) 0;
 }
 
-form+div{
+form+div {
     color: var(--base-color-monochrome-third);
     font-weight: bolder;
 }
-form+div>div{
+
+form+div>div {
     margin: calc(var(--base-size-desktop-p)/4);
 }
-form+div>div>a{
-    color:var(--base-color-monochrome-forth)
+
+form+div>div>a {
+    color: var(--base-color-monochrome-forth)
 }
-form+div>div>a:visited{
-    color:var(--base-color-complementary-second)
+
+form+div>div>a:visited {
+    color: var(--base-color-complementary-second)
 }
-form+div>div>a:hover{
-    color:var(--base-color-split-complementary-third)
+
+form+div>div>a:hover {
+    color: var(--base-color-split-complementary-third)
 }
-.errors{
+
+.errors {
     box-sizing: border-box;
-    color:#D32F2F;
-    background-color: #FFEBEE ;
+    color: #D32F2F;
+    background-color: #FFEBEE;
     width: 18em;
     border-radius: 10px;
     padding: calc(var(--base-size-desktop-p)/2);
 }
 
-.errors>p{
+.errors>p {
     margin: calc(var(--base-size-desktop-p)/4) 0;
 }
 
-.input-container {
+.input-container,
+.input-container-img {
     position: relative;
     width: 18em;
 }
@@ -138,16 +146,17 @@ input:focus {
 }
 
 
-@media only screen and (max-width: 768px){
+@media only screen and (max-width: 768px) {
+
     .signup-div,
     .login-div {
         width: 100%;
     }
-    
+
     form>div>button {
         height: 3rem;
     }
-    
+
     input {
         font-size: var(--base-size-mobile-p);
         width: 18rem;
@@ -155,10 +164,56 @@ input:focus {
         padding: 0 var(--base-size-mobile-p);
         margin: calc(var(--base-size-mobile-p)/2) 0;
     }
-    
+
     input:focus+label,
     input:not(:placeholder-shown)+label {
 
         font-size: calc(var(--base-size-mobile-p)-4);
     }
+}
+
+
+
+.input-container-img {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.file-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.file-button {
+    background-color: var(--base-color-split-complementary-first);
+    color: var(--base-color-split-complementary-third);
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.file-button:hover {
+    background-color: var(--base-color-monochrome-second);
+    color: var(--base-color-analog-first)
+}
+
+.file-name {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.file-input {
+    display: none;
+}
+
+.preview-image {
+    margin-top: 1rem;
+    height: 100px;
+    border-radius: 8px;
+    object-fit: cover;
 }
