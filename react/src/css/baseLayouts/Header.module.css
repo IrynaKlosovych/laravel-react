@@ -1,3 +1,44 @@
-#logo{
-    background-image: url("./../../../../../public/images/logo.png");
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 10vh;
+    padding: 0 2vw;
+    background-color: var(--base-color-analog-third);
+}
+
+.logoBox {
+    width: 40vw;
+    height: 100%;
+}
+.logo {
+    width: 50%;
+    height: 100%;
+    background-image: url("./../../../../public/images/logo.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: left;
+    margin: 0;
+    display: block;
+}
+
+.list {
+    width: auto;
+    color: var(--base-color-monochrome-third);
+    font-size: var(--base-size-h6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rightSection {
+    display: flex;
+    gap: 2vw;
+}
+
+.link {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
 }
