@@ -3,11 +3,11 @@ import { createBrowserRouter } from 'react-router-dom'
 import { DefaultLayout, GuestLayout } from './components'
 import { useStateContext } from "./contexts/StateContext";
 
-import { Login, Settings, CreatePage, HelloPage, Signup, NotFound } from "./views/index.js"
+import { Login, Settings, CreatePage, HelloPage, Signup, NotFound} from "./views/index.js"
 
 const AppRouter = () => {
     const { token } = useStateContext()
-
+    
     const router = createBrowserRouter([
         {
             path: '/',
@@ -15,7 +15,7 @@ const AppRouter = () => {
             children: token ? [
                 {
                     path: '/settings',
-                    element: <Settings />
+                    element: <Settings/>
                 },
                 {
                     path: '/create-page',
@@ -33,7 +33,7 @@ const AppRouter = () => {
                 {
                     path: '/signup',
                     element: <Signup />
-                }
+                },
             ]
         },
         {
