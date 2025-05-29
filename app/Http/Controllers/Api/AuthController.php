@@ -15,39 +15,42 @@ use App\Models\Users;
 
 class AuthController extends Controller
 {
-    public function login(LoginRequest $request){
+    public function login(LoginRequest $request)
+    {
         $credentials = $request->validated();
-        if(!Auth::attempt($credentials)){
+        if (!Auth::attempt($credentials)) {
             return response([
                 'message' => config('constants.MessageIncorrectEmailOrPass')
             ], 422);
         }
         /** @var Users $user */
-        $user= Auth::user();
-        $token=$user->createToken("main")->plainTextToken;
+        $user = Auth::user();
+        $token = $user->createToken("main")->plainTextToken;
 
         return response(compact('user', 'token'));
     }
 
 
-    public function signup(SignupRequest $request){
+    public function signup(SignupRequest $request)
+    {
         $data = $request->validated();
-        /** @var Users $user */ 
-        $user=Users::create([
-            'email'=>$data['email'],
-            'password'=>bcrypt($data['password'])
+        /** @var Users $user */
+        $user = Users::create([
+            'email' => $data['email'],
+            'password' => bcrypt($data['password'])
         ]);
 
-        $token=$user->createToken('main')->plainTextToken;
+        $token = $user->createToken('main')->plainTextToken;
 
         return response(compact('user', 'token'), 201);
     }
 
-    
-    public function logout(Request $request){
-        /** @var Users $user */ 
+
+    public function logout(Request $request)
+    {
+        /** @var Users $user */
         $user = $request->user();
-        $user->currentAcccessToken()->delete();
-        return response("", 204);
+        $user->currentAccessToken()->delete();
+        return response('', 204);
     }
 }
