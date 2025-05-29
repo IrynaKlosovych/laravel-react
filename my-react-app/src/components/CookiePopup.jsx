@@ -32,10 +32,9 @@ export default function CookiePopup() {
           Ми використовуємо <span className={style["bold"]}>тільки необхідні cookies</span>, без яких сайт не може функціонувати належним чином.
           Детальніше ви можете прочитати у
           <a
-            href=""
+            href="https://github.com/IrynaKlosovych/laravel-react/blob/main/PrivacyPolicy.md"
             target="_blank"
-            rel="noopener noreferrer"
-          >
+            rel="noopener noreferrer">
             Політиці конфіденційності.
           </a>
         </p>
